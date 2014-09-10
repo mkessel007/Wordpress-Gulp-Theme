@@ -1,0 +1,6 @@
+node_modules/
+dist/
+_prototype/node_modules
+_prototype/dist
+.sass-cache
+.sftp.config
