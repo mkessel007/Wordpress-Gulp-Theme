@@ -47,3 +47,4 @@ http://indee.io
 	<?php wp_head(); ?>
 
 	<body>
+		<?php include (TEMPLATEPATH . '/includes/nav.inc.php'); ?>
