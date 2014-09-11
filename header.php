@@ -1,7 +1,8 @@
 <!--
+
 Hi Guys!
 
-Build with love and passion by the team at Indee
+Built with love and passion by the team at Indee
 http://indee.io
 @weareindee
 
