@@ -18,6 +18,21 @@
 		wp_enqueue_script( 'owljs', get_template_directory_uri() . '/dist/components/owl-carousel2/dist/owl.carousel.min.js');
 		wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/dist/js/front-end.min.js');
 	} add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+	
+	//Generate Widgets
+	function create_widget($name, $id, $description){
+		$args = array(
+			'name' => $name,
+			'id' => $id,
+			'description'=>$description,
+			'before_widget' => "",
+			'after_widget' => "",
+			'before_title' => '<h2>',
+			'after_title' => '</h2>',
+		);
+		register_sidebar($args);
+	};
+	create_widget('Bottom Right', 'bottom-right', 'This is the bottom right widget area.');
 
 	add_theme_support( 'menus' );
 	add_theme_support( 'post-thumbnails' );
