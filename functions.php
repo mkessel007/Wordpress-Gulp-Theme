@@ -1,5 +1,6 @@
 <?php
 	add_filter( 'show_admin_bar', '__return_false' );
+	require_once('classes/bootstrap-nav.class.php');
 	// Website Styles
 	function theme_styles() {
 		wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/dist/components/bootstrap/dist/css/bootstrap.min.css');
@@ -18,7 +19,7 @@
 		wp_enqueue_script( 'owljs', get_template_directory_uri() . '/dist/components/owl-carousel2/dist/owl.carousel.min.js');
 		wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/dist/js/front-end.min.js');
 	} add_action( 'wp_enqueue_scripts', 'theme_scripts' );
-	
+
 	//Generate Widgets
 	function create_widget($name, $id, $description){
 		$args = array(
@@ -36,3 +37,11 @@
 
 	add_theme_support( 'menus' );
 	add_theme_support( 'post-thumbnails' );
+
+
+	add_action( 'after_setup_theme', 'wpt_setup' );
+	if ( ! function_exists( 'wpt_setup' ) ):
+		function wpt_setup() {
+			register_nav_menu( 'primary', __( 'Primary navigation', 'wptuts' ) );
+		}
+	endif;
