@@ -1,17 +1,13 @@
 var gulp = require("gulp"),
 		bower = require("bower"),
 		compass    = require("gulp-compass"),
-		coffee    = require("gulp-coffee"),
 		jshint     = require("gulp-jshint"),
 		concat     = require("gulp-concat"),
 		uglify     = require("gulp-uglify"),
 		prefix     = require("gulp-autoprefixer"),
 		rename     = require("gulp-rename"),
 		gutil      = require("gulp-util"),
-		minifyCSS  = require("gulp-minify-css"),
-		sourcemaps = require("gulp-sourcemaps"),
-		images     = require("gulp-imagemin"),
-		pngcrush = require("imagemin-pngcrush");
+		minifyCSS  = require("gulp-minify-css");
 
 globals = {
 	// Working Directory
@@ -61,11 +57,6 @@ gulp.task("scripts", function() {
 
 gulp.task("images", function() {
     gulp.src(paths.app.images + "/*")
-        .pipe(images({
-            progressive: true,
-            svgoPlugins: [ { removeViewBox: false } ],
-            use: [ pngcrush() ]
-        }))
         .pipe(gulp.dest(paths.dist.images));
 });
 
