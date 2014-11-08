@@ -1,7 +1,6 @@
 var gulp = require("gulp"),
 	bower      = require("bower"),
 	sass       = require("gulp-sass"),
-	jade       = require("gulp-jade"),
 	concat     = require("gulp-concat"),
 	uglify     = require("gulp-uglify"),
 	prefix     = require("gulp-autoprefixer"),
@@ -18,7 +17,6 @@ globals = {
 
 paths = {
 	app:{
-		"jade": globals.dev + "/jade",
 		"scripts": globals.dev + "/scripts",
 		"styles": globals.dev + "/styles",
 		"images": globals.dev + "/images",
@@ -64,17 +62,6 @@ gulp.task("sass", function() {
 		});
 });
 
-gulp.task("jade", function() {
-	gulp.src(paths.app.jade + "/*.jade")
-		.pipe(jade({
-			pretty: true
-		}))
-		.pipe(gulp.dest(globals.prod))
-		.on("error", function(err) {
-			gutil.log("went to shit!");
-		});
-});
-
 gulp.task("scripts", function() {
 	gulp.src(paths.app.scripts + "/*.js")
 		.pipe(uglify())
@@ -84,7 +71,6 @@ gulp.task("scripts", function() {
 
 gulp.task("watch", function() {
 	gulp.watch(paths.app.styles + "/*.scss", [ "sass" ]);
-	gulp.watch(paths.app.jade + "/*.jade", [ "jade" ]);
 	gulp.watch(paths.app.fonts + "/*", [ "fonts" ]);
 	gulp.watch(paths.app.scripts + "/*.js", [ "scripts" ]);
 	gulp.watch(paths.app.images + "/*", [ "images" ]);
@@ -93,7 +79,6 @@ gulp.task("watch", function() {
 
 gulp.task("default", [
 	"sass",
-	"jade",
 	"images",
 	"scripts",
 	"fonts",
