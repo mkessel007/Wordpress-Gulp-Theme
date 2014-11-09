@@ -3,14 +3,13 @@
     <h2>Search</h2>
     <form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
       <div class="form-group">
-        <input class="form-control" type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" />
-        <input class="form-control btn btn-default" type="submit" id="searchsubmit" value="Search" class="btn" />
+        <input class="form-control" type="text" size="18" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" placeholder="Search Here"/>
       </div>
     </form>
   </section>
   <section class="clearfix">
     <h2>Categories</h2>
-    <ul>
+    <ul class="categories">
       <?php $args = array(
         'show_option_all'    => '',
         'orderby'            => 'name',
