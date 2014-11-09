@@ -1,1 +1,44 @@
 //
+#searchform {
+  margin-top:20px;
+  position:relative;
+  &:before {
+    content: "\f002";
+    position: absolute;
+    display: block;
+    left: 0;
+    font-size: 20px;
+    padding: 7px;
+    top: 0;
+    line-height: 1;
+  }
+  .form-group {
+    input {
+      border-radius:0;
+      padding-left:35px;
+      line-height:1;
+    }
+  }
+}
+
+
+ul.categories {
+  li {
+    background:white;
+    margin-bottom:2px;
+    a {
+      padding: 5px;
+      display:block;
+      height: 100%;
+      width: 100%;
+      color:black;
+      &:before {
+        float:left;
+        padding-right:5px;
+        content:"\f02c";
+        display:block;
+        color:black;
+      }
+    }
+  }
+}
