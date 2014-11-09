@@ -1,1 +1,52 @@
-//
+.navbar-default {
+  .container-fluid {
+    // Header
+    .navbar-header {
+      button {
+        span.sr-only {}
+        span.icon-bar {
+          &:nth-child(1){}
+          &:nth-child(2){}
+          &:nth-child(3){}
+        }
+      a {}
+      }
+    }
+    // End
+    .navbar-collapse {
+      // Top Level Nav Bar
+      ul.navbar-nav {
+        li {
+          &:hover {}
+          a {
+            &:hover {}
+          }
+          // Second Level Nav Bar
+          ul.dropdown-menu {
+            li {
+              a {}
+            }
+          }
+          // End
+        }
+        // Active State
+        li.active {
+          a {}
+        }
+        // End
+
+        // Open State
+        li.open {
+          a {}
+          ul {
+            li {
+              a {}
+            }
+          }
+        }
+        // End
+      }
+      // End
+    }
+  }
+}
