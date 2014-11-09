@@ -6,10 +6,9 @@
     <?php include (TEMPLATEPATH . '/includes/sidebar.inc.php'); ?>
     <div id="content" class="col-md-8 posts projects">
       <h2>Category: <?php single_cat_title(); ?></h2>
-      <?php
-        $posts= get_posts();
-        if ($posts) { foreach ( $posts as $post ) { setup_postdata($post);
-      ?>
+
+      <?php $the_query = new WP_Query( 'cat='.the_category_ID() ); ?>
+      <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
       <article class="post content">
         <header>
           <div class="the_img">
@@ -27,7 +26,7 @@
           </ul> -->
         </footer>
       </article>
-      <?php }} ?>
+      <?php wp_reset_query(); endwhile; ?>
     </div>
   </div>
 <?php get_footer(); ?>
