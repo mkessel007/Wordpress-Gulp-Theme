@@ -1,4 +1,10 @@
 //
+* {
+  &:before, &:after {
+    font-family:"FontAwesome";
+  }
+}
+
 #searchform {
   margin-top:20px;
   position:relative;
